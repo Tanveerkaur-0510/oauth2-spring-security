@@ -8,11 +8,11 @@
 		<version>3.3.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.gfg</groupId>
+	<groupId>com.oauth2-spring-security</groupId>
 	<artifactId>oauth2-spring-security</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>oauth2-spring-security</name>
-	<description>oauth2-spring-security</description>
+	<description>Spring Security project for Spring Boot</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -92,6 +92,16 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.diffplug.spotless</groupId>
+				<artifactId>spotless-maven-plugin</artifactId>
+				<version>2.43.0</version>
+				<configuration>
+					<java>
+						<googleJavaFormat/>
+					</java>
 				</configuration>
 			</plugin>
 		</plugins>

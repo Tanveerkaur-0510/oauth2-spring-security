@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-  public User createUser(@NotNull  OAuth2User oAuth2User) {
+  public User createUser(@NotNull OAuth2User oAuth2User) {
     User user = new User();
     // Set user attributes from OAuth2User
     user.setName(oAuth2User.getAttribute("login"));

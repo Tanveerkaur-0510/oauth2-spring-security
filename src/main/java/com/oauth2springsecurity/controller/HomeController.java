@@ -11,24 +11,22 @@ import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 public class HomeController {
-  @Autowired
-  private UserService userService;
+  @Autowired private UserService userService;
 
   @GetMapping("/home")
   public ModelAndView home(@AuthenticationPrincipal @NotNull OAuth2User principal) {
     // Add user name to the model
-    ModelAndView modelAndView=new ModelAndView();
+    ModelAndView modelAndView = new ModelAndView();
     modelAndView.setViewName("home");
     modelAndView.addObject("name", principal.getAttribute("login"));
-    User user =userService.createUser(principal);
+    User user = userService.createUser(principal);
     return modelAndView;
   }
 
   @GetMapping("/login")
   public ModelAndView login() {
-    ModelAndView modelAndView=new ModelAndView();
+    ModelAndView modelAndView = new ModelAndView();
     modelAndView.setViewName("login");
     return modelAndView;
   }
-
 }
